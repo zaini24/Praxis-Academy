@@ -1,3 +1,4 @@
+package SingletonApp;
 public class SingletonApp {
     public static void main(String[] args){
         OrderService orderService = new OrderService();
