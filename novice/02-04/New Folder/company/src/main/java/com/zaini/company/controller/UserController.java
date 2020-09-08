@@ -14,9 +14,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 // import org.springframework.web.bind.annotation.RestController;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
 
 
 @Controller // This means that this class is a Controller
@@ -51,5 +54,10 @@ public @ResponseBody User addNewUser(@RequestBody User user) {
 public @ResponseBody Iterable<User> getAllUsers() {
   return userRepository.findAll();
 }
+@GetMapping("/user/{id}")
+    User userById(@PathVariable Long id){
+        return userRepository.findById(id).orElseThrow(() -> new ResponseStatusException(
+                HttpStatus.NOT_FOUND));
+    }
 }
     
