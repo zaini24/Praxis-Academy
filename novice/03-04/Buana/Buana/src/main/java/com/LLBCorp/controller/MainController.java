@@ -39,13 +39,6 @@ public class MainController {
         return userRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
-    // @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    // public User getUserById(@PathVariable("id") Long id){
-    //     User user = userService.getUsers(id);
-    //     System.out.println(user);
-    //     return user;
-    // }
-
     @DeleteMapping("/delete/{id}")
     public void deleteUser(@PathVariable Integer id){
         userRepository.deleteById(id);
