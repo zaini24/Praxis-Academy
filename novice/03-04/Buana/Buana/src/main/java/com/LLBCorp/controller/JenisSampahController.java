@@ -36,6 +36,39 @@ public class JenisSampahController {
     JenisSampah save(@RequestBody JenisSampah jenissampah){
         return jenissampahRepository.save(jenissampah);
     }
+
+    int sampah Karton
+    int satuan = 1;
+    if (sampah Karton < satuan){
+        System.out.println("2000");
+    }else if (sampah Karton > satuan){
+        System.out.println("5000")
+    }
+
+    int sampah Botol_plastik;
+    int satuan = 1;
+    if (sampah Botol_plastik < satuan){
+        System.out.println("3000");
+    }else if (sampah Botol_plastik > satuan){
+        System.out.println("7000")
+    }
+
+    int sampah Botol_kaca;
+    int satuan = 1;
+    if (sampah Botol_kaca < satuan){
+        System.out.println("4000");
+    }else if (sampah Botol_kaca > satuan){
+        System.out.println("9000")
+    }
+
+    int sampah Barang_bekas;
+    int satuan = 1;
+    if (sampah Barang_bekas < satuan){
+        System.out.println("5000");
+    }else if (sampah Barang_bekas > satuan){
+        System.out.println("10000")
+    }
+
     
     @GetMapping("/all")
     Iterable<JenisSampah> all() {
